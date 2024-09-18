@@ -7,6 +7,7 @@ import "./index.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Login from "./components/login/login"
 import Redirect from "./components/redirect/redirect"
+import HomePage from "./pages/homepage/HomePage"
 
 const container = document.getElementById("root")
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <App />,
+    element: <HomePage />,
   },
 ])
 

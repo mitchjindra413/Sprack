@@ -9,7 +9,10 @@
   "parserOptions": { "project": true, "tsconfigRootDir": "./" },
   "plugins": ["@typescript-eslint"],
   "root": true,
-  "ignorePatterns": ["dist"],
+  "ignorePatterns": [
+    "dist",
+    "tailwind.config.js"
+  ],
   "rules": {
     "@typescript-eslint/consistent-type-imports": [
       2,
