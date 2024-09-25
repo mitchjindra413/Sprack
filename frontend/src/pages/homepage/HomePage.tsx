@@ -2,6 +2,8 @@ import logo from '../../assets/logo.png';
 import { Button } from "@/components/ui/button"
 import Login from "@/components/login/login"
 import circle from '../../assets/Circle Scatter Haikei.svg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFeatherPointed } from "@fortawesome/free-solid-svg-icons"
 
 const HomePage = () => {
 
@@ -9,7 +11,7 @@ const HomePage = () => {
     <main className={"px-10 flex flex-col"}>
       <nav className={"py-5 sticky top-0 left-0 right-0 flex justify-between bg-white"}>
         <div className={"flex items-center"}>
-          <img className={"h-7 pe-2"} alt={'logo'} src={logo} />
+          <FontAwesomeIcon icon={faFeatherPointed} size="2xl" className={"pe-2"}/>
           <h1 className={"font-black text-2xl"}>sprack</h1>
         </div>
         <div>

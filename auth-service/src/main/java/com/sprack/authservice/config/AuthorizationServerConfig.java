@@ -4,8 +4,6 @@ import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -74,7 +72,7 @@ public class AuthorizationServerConfig {
 
         // Authorization Code Flow PKCE
         RegisteredClient reactFrontend = RegisteredClient.withId(UUID.randomUUID().toString())
-                .clientId("client")
+                .clientId("react-frontend")
                 .clientSecret(passwordEncoder().encode("secret"))
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
@@ -88,7 +86,7 @@ public class AuthorizationServerConfig {
                         .build())
                 .build();
 
-        return new InMemoryRegisteredClientRepository( reactFrontend);
+        return new InMemoryRegisteredClientRepository(userService, reactFrontend);
     }
 
     @Bean

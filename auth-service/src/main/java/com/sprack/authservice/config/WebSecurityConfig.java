@@ -16,10 +16,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @AllArgsConstructor
 public class WebSecurityConfig {
-    PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
+    private CORSCustomizer corsCustomizer;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        corsCustomizer.corsCustomizer(http);
         return http.formLogin(Customizer.withDefaults())
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                         authorizeHttpRequests
