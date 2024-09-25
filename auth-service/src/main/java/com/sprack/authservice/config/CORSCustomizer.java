@@ -14,7 +14,7 @@ public class CORSCustomizer {
             CorsConfigurationSource source = s -> {
                 CorsConfiguration cc = new CorsConfiguration();
                 cc.setAllowCredentials(true);
-                cc.setAllowedOrigins(List.of("http://127.0.0.1:3000"));
+                cc.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:8079"));
                 cc.setAllowedHeaders(List.of("*"));
                 cc.setAllowedMethods(List.of("*"));
                 return cc;
